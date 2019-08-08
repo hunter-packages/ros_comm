@@ -22,7 +22,9 @@ set(PROJECT_INSTALLSPACE_LIBRARIES ros::rosbag)
 catkin_package(
   LIBRARIES rosbag
   INCLUDE_DIRS include
-  CATKIN_DEPENDS rosbag_storage rosconsole roscpp std_srvs topic_tools xmlrpcpp)
+  CATKIN_DEPENDS rosbag_storage rosconsole roscpp std_srvs topic_tools xmlrpcpp
+  DEPENDS "Boost COMPONENTS date_time regex program_options filesystem" BZip2
+)
 
 add_library(rosbag
   src/player.cpp
